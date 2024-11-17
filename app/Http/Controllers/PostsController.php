@@ -15,14 +15,14 @@ class PostsController extends Controller
     {
         $userID = Auth::user()->id;
         if ($userID) {
-            $posts = Post::where('author_id', $userID)->get();
+            $posts = Post::all();
             return response()->json($posts, 200);
         }
         return response()->json(['error' => 'Unauthorized'], 401);
     }
     function createPost(Request $request)
     {
-        die("in first");
+
         try {
             if (!$request->title || !$request->content) {
                 return response()->json([
