@@ -22,6 +22,7 @@ class PostsController extends Controller
     }
     function createPost(Request $request)
     {
+        die("in first");
         try {
             if (!$request->title || !$request->content) {
                 return response()->json([
