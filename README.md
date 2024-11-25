@@ -34,13 +34,16 @@ This **Blog Post Management System** is a Laravel-based web application designed
   - User authentication powered by Laravel Sanctum.
   - Secure login and access to role-restricted routes.
 - **Role-Based Access Control (RBAC)**:
-  - Admin, Editor, and Viewer roles.
-  - Role-based permissions enforced through middleware.
+  - **Admin**: Create, delete, and view posts.
+  - **Editor**: Update and view posts.
+  - **Viewer**: View posts only.
 - **Blog Management**:
   - CRUD functionality for blog posts (Create, Read, Update, Delete).
   - Relationships between blog posts and users.
 - **Role-Specific Dashboards**:
   - Separate dashboards for Admin and Editor roles.
+- **API Endpoints**:
+  - Fully functional RESTful APIs for post management.
 - **Pre-Seeded Data**:
   - Database seeded with sample users and roles for testing.
 - **API Validation**:
@@ -89,14 +92,64 @@ This **Blog Post Management System** is a Laravel-based web application designed
 
 6. **Install Sanctum**:
    ```bash
-   php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-   php artisan migrate
+   php artisan install:api
    ```
 
 7. **Start the application**:
    ```bash
    php artisan serve
    ```
+
+---
+
+## API Endpoints
+
+- **Login**:  
+  `POST 127.0.0.1:8001/api/auth/login`  
+  **Body**:  
+  ```json
+  {
+    "email": "example@example.com",
+    "password": "password"
+  }
+  ```
+
+- **Signup**:  
+  `POST 127.0.0.1:8001/api/auth/signup`  
+  **Body**:  
+  ```json
+  {
+    "name": "User Name",
+    "email": "example@example.com",
+    "password": "password"
+  }
+  ```
+
+- **Create Post (Admin only)**:  
+  `POST 127.0.0.1:8001/api/auth/posts`  
+  **Body**:  
+  ```json
+  {
+    "title": "Test Title",
+    "content": "Test Content"
+  }
+  ```
+
+- **Get Posts (All Roles)**:  
+  `GET 127.0.0.1:8001/api/auth/posts`
+
+- **Update Post (Editor only)**:  
+  `PATCH 127.0.0.1:8001/api/auth/posts/:id`  
+  **Body**:  
+  ```json
+  {
+    "title": "Updated Title",
+    "content": "Updated Content"
+  }
+  ```
+
+- **Delete Post (Admin only)**:  
+  `DELETE 127.0.0.1:8001/api/auth/posts/:id`
 
 ---
 
@@ -110,12 +163,6 @@ The application includes pre-seeded users for testing role-based access control:
 
 ---
 
-## API Testing
-
-- **Postman**: Import the Postman collection provided in the `/tests` folder to test API endpoints. Ensure authentication tokens are included for restricted routes.
-
----
-
 ## Project Structure
 
 - **Routes**:
@@ -125,7 +172,7 @@ The application includes pre-seeded users for testing role-based access control:
 - **Middleware**: Custom RBAC middleware implemented in `app/Http/Middleware`.
 - **Database**:
   - Migrations in `database/migrations`.
-  - Seeders in `database/seeders`.
+  
 
 ---
 
@@ -149,5 +196,5 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 For queries or feedback, reach out:
 
-- **Name**: Yazan
-- **Email**: yazan@example.com
+- **Name**: Yazan Mansour
+- **Email**: Yazan.mansour2003@gmail.com
