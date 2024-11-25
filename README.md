@@ -59,7 +59,7 @@ This **Blog Post Management System** is a Laravel-based web application designed
    git clone https://github.com/YazanM23/blog-posts
    cd blog-posts
    
-1. Clone the repository:
+2. Install dependencies:
    ```bash
    git clone https://github.com/YazanM23/blog-posts
    cd blog-posts
