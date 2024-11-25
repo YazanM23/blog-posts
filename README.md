@@ -76,9 +76,9 @@ This **Blog Post Management System** is a Laravel-based web application designed
 6. install Sanctum:
     ```bash
     php artisan install:api
-7.Start the application:
-    ```bash
-    php artisan serve
+7. Start the application:
+   ```bash
+   php artisan serve
 
      
 
