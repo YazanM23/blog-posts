@@ -59,19 +59,17 @@ This **Blog Post Management System** is a Laravel-based web application designed
    git clone https://github.com/YazanM23/blog-posts
    cd blog-posts
 
-   
 2. Install dependencies:
    ```bash
    composer install
 
-  
 3. Set up environment variables:
    ```bash
-  cp .env.example .env
+   cp .env.example .env
   
 4. Generate application key:
     ```bash
- php artisan key:generate
+    php artisan key:generate
   
 
 
