@@ -58,3 +58,21 @@ This **Blog Post Management System** is a Laravel-based web application designed
    ```bash
    git clone https://github.com/your-username/blog-post-management-system.git
    cd blog-post-management-system
+Install dependencies:
+composer install
+Configure the .env file:
+cp .env.example .env
+Update the database credentials and other environment variables.
+Generate an application key:
+php artisan key:generate
+Run migrations and seed the database:
+php artisan migrate --seed
+(If using Passport) Install and configure Passport:
+php artisan passport:install
+Start the application:
+php artisan serve
+Pre-Seeded Users
+Admin: admin@example.com / password
+Editor: editor@example.com / password
+Viewer: viewer@example.com / password
+
