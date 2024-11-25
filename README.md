@@ -70,6 +70,9 @@ This **Blog Post Management System** is a Laravel-based web application designed
 4. Generate application key:
     ```bash
     php artisan key:generate
-  
+5. Run database migrations:
+    ```bash
+    php artisan migrate
+     
 
 
