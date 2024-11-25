@@ -61,10 +61,10 @@ This **Blog Post Management System** is a Laravel-based web application designed
 2. Install dependencies:
    ```bash
   composer install
-3. Set up environment variables::
+3. Set up environment variables:
    ```bash
   cp .env.example .env
-4.Generate application key:
+4. Generate application key:
     ```bash
  php artisan key:generate
   
